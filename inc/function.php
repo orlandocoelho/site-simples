@@ -6,7 +6,7 @@
  * Time: 20:54
  */
 
-$route = ['', 'home', 'empresa', 'produtos', 'servicos', 'contato'];
+$route = ['home', 'empresa', 'produtos', 'servicos', 'contato'];
 
 //pegando url parcial
 function getUrl()
@@ -17,25 +17,25 @@ function getUrl()
 }
 
 //verificando se existe na array a url digitada
-function inArray(){
-    $in = in_array(getUrl(), $GLOBALS['route']);
-    if($in == true && exists() == true){
+function inArray()
+{
+    return in_array(getUrl(), $GLOBALS['route']);
+}
+
+//verificando existencia do arquivo
+function exists()
+{
+    return file_exists('inc/'.getUrl().'.php');
+}
+
+//Verifica se esta tudo certo e da require
+function checks()
+{
+    if(getUrl() == null){
+        require_once('inc/home.php');
+    }else if(inArray() == true && exists() == true){
         require_once("inc/".getUrl().'.php');
     }else{
         require_once("inc/error.php");
     }
-}
-
-//verificando existencia do arquivo
-function exists(){
-    if(getUrl() == ""){
-        return true;
-    }else{
-        return file_exists('inc/'.getUrl().'.php');
-    }
-}
-
-function checks()
-{
-
 }
