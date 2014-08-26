@@ -31,31 +31,18 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse pull-right" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                        <li><a href="?pg=home">Home</a></li>
-                        <li><a href="?pg=empresa">Empresa</a></li>
-                        <li><a href="?pg=produtos">Produtos</a></li>
-                        <li><a href="?pg=servicos">Serviços</a></li>
-                        <li><a href="?pg=contato">Contato</a></li>
+                        <li><a href="home">Home</a></li>
+                        <li><a href="empresa">Empresa</a></li>
+                        <li><a href="produtos">Produtos</a></li>
+                        <li><a href="servicos">Serviços</a></li>
+                        <li><a href="contato">Contato</a></li>
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
         </nav>
 
         <?php
-            $pg = $_GET['pg'];
-            if(!isset($pg) OR $pg == "home"){
-                require_once("inc/home.php");
-            }elseif($pg == "empresa"){
-                require_once("inc/empresa.php");
-            }elseif($pg == "servicos"){
-                require_once("inc/servicos.php");
-            }elseif($pg == "produtos"){
-                require_once("inc/produtos.php");
-            }elseif($pg == "contato"){
-                require_once("inc/contato.php");
-            }else{
-                require_once("inc/error.php");
-            }
+            checks();
         ?>
 
         <div class="footer">
