@@ -1,3 +1,7 @@
+<?php
+    require_once("inc/function.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
