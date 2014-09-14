@@ -19,7 +19,7 @@ function conexao()
 
     }catch (\PDOException $e){
         echo $e->getMessage()."\n";
-        echo $e->getTranceAsString()."\n";
+        echo $e->getTraceAsString()."\n";
     }
 
 }
