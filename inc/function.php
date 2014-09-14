@@ -6,6 +6,9 @@
  * Time: 20:54
  */
 
+require_once ("Db/conexao.php");
+
+
 $route = ['home', 'empresa', 'produtos', 'servicos', 'contato'];
 
 //pegando url parcial
@@ -38,4 +41,19 @@ function checks()
     }else{
         require_once("inc/error.php");
     }
+}
+
+function read($tabela, $order = null, $sent = null) {
+    $db = conexao();
+    if($order == null && $sent == null){
+        $query = "Select * from $tabela";
+    }else if(!empty($order) && !empty($sent)){
+        $query = "Select * from $tabela ORDER BY $order $sent";
+    }else{
+        $query = "Select * from $tabela";
+    }
+
+    $stmt = $db->query($query);
+    return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+
 }

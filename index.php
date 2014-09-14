@@ -1,5 +1,5 @@
 <?php
-    require_once("inc/function.php");
+require_once("inc/function.php");
 ?>
 
 <!DOCTYPE html>
@@ -13,47 +13,60 @@
 </head>
 <body>
 
-    <div class="container">
+<div class="container">
 
-        <nav class="navbar navbar-default" role="navigation">
-            <div class="container-fluid">
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="#">SITE SIMPLES</a>
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-2">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#">SITE SIMPLES</a>
+                    </div>
                 </div>
-
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse pull-right" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav">
-                        <li><a href="home">Home</a></li>
-                        <li><a href="empresa">Empresa</a></li>
-                        <li><a href="produtos">Produtos</a></li>
-                        <li><a href="servicos">Serviços</a></li>
-                        <li><a href="contato">Contato</a></li>
-                    </ul>
-                </div><!-- /.navbar-collapse -->
-            </div><!-- /.container-fluid -->
-        </nav>
-
-        <?php
-            checks();
-        ?>
-
-        <div class="footer">
-            <div class="container">
-                <p class="text-muted">Todos os direitos reservados - <?php echo date("Y");?></p>
+                <div class="col-lg-4">
+                    <div class="input-group text-right" style="margin-top: 10px;">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="button">Go!</button>
+                    </span>
+                        <input type="text" class="form-control">
+                    </div><!-- /input-group -->
+                </div>
+                <div class="col-lg-6">
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse pull-right" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                            <li><a href="home">Home</a></li>
+                            <li><a href="empresa">Empresa</a></li>
+                            <li><a href="produtos">Produtos</a></li>
+                            <li><a href="servicos">Serviços</a></li>
+                            <li><a href="contato">Contato</a></li>
+                        </ul>
+                    </div><!-- /.navbar-collapse -->
+                </div>
             </div>
+        </div><!-- /.container-fluid -->
+    </nav>
+
+    <?php
+    checks();
+    ?>
+
+    <div class="footer">
+        <div class="container">
+            <p class="text-muted">Todos os direitos reservados - <?php echo date("Y");?></p>
         </div>
+    </div>
 
-    </div><!--./container-->
+</div><!--./container-->
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 </body>
 </html>
