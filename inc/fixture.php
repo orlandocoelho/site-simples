@@ -44,17 +44,11 @@ if($create){
 }
 
 
-$paginas = [
-    "home" => "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem consectetur consequuntur dicta dolorem enim error hic in ipsa maiores minus, modi molestiae, mollitia omnis praesentium quasi repudiandae ullam velit vero. ",
-    "empresa" => "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem consectetur consequuntur dicta dolorem enim error hic in ipsa maiores minus, modi molestiae, mollitia omnis praesentium quasi repudiandae ullam velit vero. ",
-    "produtos" => "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem consectetur consequuntur dicta dolorem enim error hic in ipsa maiores minus, modi molestiae, mollitia omnis praesentium quasi repudiandae ullam velit vero. ",
-    "serviços" => "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem consectetur consequuntur dicta dolorem enim error hic in ipsa maiores minus, modi molestiae, mollitia omnis praesentium quasi repudiandae ullam velit vero. "
-];
-
-$sql = "INSERT INTO `code_education`.`conteudo` (`pagina`, `conteudo`) VALUES ('home', 'conteudo da pagina sobre')";
+$sql = "INSERT INTO `sitesimple`.`conteudo` (`pagina`, `conteudo`) VALUES ('contato', 'Conteudo contato')";
 $stmt = $conn->prepare($sql);
+
 if(!$stmt->execute()):
     die(var_dump($stmt->errorInfo()));
 else:
-    echo "Conteudo pagina de conteudo criado com sucesso ! \n";
+    echo "Conteudo pagina criado com sucesso ! \n";
 endif;
