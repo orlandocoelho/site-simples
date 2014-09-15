@@ -59,8 +59,10 @@ function read($tabela, $order = null, $sent = null) {
 }
 
 function busca($val){
-    $read = read('conteudo');
-    if($read === $val){
-        echo "Acessar: <a href='{$val}'>{$val}</a>";
+    foreach(read('conteudo') as $for){
+        if($for['pagina'] == $val){
+            echo "<b>Paginas encontradas: <br /></b>";
+            echo "Acessar: <a href='{$val}'>{$val}</a>";
+        }
     }
 }

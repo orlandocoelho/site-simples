@@ -31,12 +31,14 @@ require_once("inc/function.php");
                     </div>
                 </div>
                 <div class="col-lg-4">
-                    <div class="input-group text-right" style="margin-top: 10px;">
-                    <span class="input-group-btn">
-                        <button class="btn btn-default" type="button">Go!</button>
-                    </span>
-                        <input type="text" class="form-control">
-                    </div><!-- /input-group -->
+                    <form action="" method="post">
+                        <div class="input-group text-right" style="margin-top: 10px;">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" name="busca" value="busca" type="submit">Go!</button>
+                            </span>
+                                <input type="text" name="textbusca" class="form-control">
+                        </div><!-- /input-group -->
+                    </form>
                 </div>
                 <div class="col-lg-6">
                     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -55,7 +57,12 @@ require_once("inc/function.php");
     </nav>
 
     <?php
-    checks();
+        if(isset($_POST['busca']) && $_POST['busca'] == 'busca'){
+            $text = $_POST['textbusca'];
+            busca($text);
+        }else if(!isset($_POST['busca'])){
+            checks();
+        }
     ?>
 
     <div class="footer">
