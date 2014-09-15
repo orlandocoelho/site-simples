@@ -1,9 +1,18 @@
 <div class="jumbotron">
-    <h1>CONTATO</h1>
-    <?php if(!isset($_POST['enviar'])): ?>
-    <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem consectetur consequuntur dicta dolorem enim error hic in ipsa maiores minus, modi molestiae, mollitia omnis praesentium quasi repudiandae ullam velit vero. </p>
     <?php
-    endif;
+    $read = read('conteudo');
+    foreach($read as $val){
+        //Aqui é facilmente, possivel fazer de uma forma dinamica pela url que esta acessando exibir o conteudo.
+        //Fazendo assim com que tenha apenas uma pagina de conteudo, com apenas um esqueleto do layout.
+        if($val['pagina'] === "contato"){
+            echo "<h1>{$val['pagina']}</h1>";
+            echo "<p>{$val['conteudo']}</p>";
+        }
+    }
+    ?>
+
+    <?php
+
 
     if(isset($_POST['enviar']) && $_POST['enviar'] == "enviar"){
 

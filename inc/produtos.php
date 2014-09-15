@@ -1,6 +1,17 @@
 <div class="jumbotron">
-    <h1>Produtos</h1>
-    <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem consectetur consequuntur dicta dolorem enim error hic in ipsa maiores minus, modi molestiae, mollitia omnis praesentium quasi repudiandae ullam velit vero. </p>
+
+    <?php
+    $read = read('conteudo');
+    foreach($read as $val){
+        //Aqui é facilmente, possivel fazer de uma forma dinamica pela url que esta acessando exibir o conteudo.
+        //Fazendo assim com que tenha apenas uma pagina de conteudo, com apenas um esqueleto do layout.
+        if($val['pagina'] === "produtos"){
+            echo "<h1>{$val['pagina']}</h1>";
+            echo "<p>{$val['conteudo']}</p>";
+        }
+    }
+    ?>
+
     <p>
         <a role="button" href="#" class="btn btn-lg btn-primary">BOTÃO PÁGINA PRODUTOS »</a>
     </p>
