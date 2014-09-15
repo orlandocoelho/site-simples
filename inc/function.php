@@ -57,3 +57,10 @@ function read($tabela, $order = null, $sent = null) {
     return $stmt->fetchAll(\PDO::FETCH_ASSOC);
 
 }
+
+function busca($val){
+    $read = read('conteudo');
+    if($read === $val){
+        echo "Acessar: <a href='{$val}'>{$val}</a>";
+    }
+}
