@@ -43,6 +43,42 @@ if($create){
     echo "Contato ja existe\n";
 }
 
+$sql = "INSERT INTO `sitesimple`.`conteudo` (`pagina`, `conteudo`) VALUES ('home', 'Conteudo home')";
+$stmt = $conn->prepare($sql);
+
+if(!$stmt->execute()):
+    die(var_dump($stmt->errorInfo()));
+else:
+    echo "Conteudo home criado com sucesso ! \n";
+endif;
+
+$sql = "INSERT INTO `sitesimple`.`conteudo` (`pagina`, `conteudo`) VALUES ('empresa', 'Conteudo empresa')";
+$stmt = $conn->prepare($sql);
+
+if(!$stmt->execute()):
+    die(var_dump($stmt->errorInfo()));
+else:
+    echo "Conteudo empresa criado com sucesso ! \n";
+endif;
+
+$sql = "INSERT INTO `sitesimple`.`conteudo` (`pagina`, `conteudo`) VALUES ('produtos', 'Conteudo produtos')";
+$stmt = $conn->prepare($sql);
+
+if(!$stmt->execute()):
+    die(var_dump($stmt->errorInfo()));
+else:
+    echo "Conteudo produtos criado com sucesso ! \n";
+endif;
+
+$sql = "INSERT INTO `sitesimple`.`conteudo` (`pagina`, `conteudo`) VALUES ('servicos', 'Conteudo servicos')";
+$stmt = $conn->prepare($sql);
+
+if(!$stmt->execute()):
+    die(var_dump($stmt->errorInfo()));
+else:
+    echo "Conteudo servicos criado com sucesso ! \n";
+endif;
+
 
 $sql = "INSERT INTO `sitesimple`.`conteudo` (`pagina`, `conteudo`) VALUES ('contato', 'Conteudo contato')";
 $stmt = $conn->prepare($sql);
@@ -50,5 +86,5 @@ $stmt = $conn->prepare($sql);
 if(!$stmt->execute()):
     die(var_dump($stmt->errorInfo()));
 else:
-    echo "Conteudo pagina criado com sucesso ! \n";
+    echo "Conteudo contato criado com sucesso ! \n";
 endif;
