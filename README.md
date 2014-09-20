@@ -1,4 +1,4 @@
 site-simples
 ============
 
-Fase 1,2 e fase 3 do foundation
+Fase 1,2,3 e 4 do foundation
