@@ -85,7 +85,7 @@ function find($pg){
 function update($pg, $con, $id)
 {
     $db = conexao();
-    $query = "UPDATE conteudo SET (pagina, conteudo) VALUES (':pagina', ':conteudo') WHERE id = ':id'";
+    $query = "UPDATE conteudo SET pagina = :pagina, conteudo= :conteudo WHERE id = :id";
     $stmt = $db->prepare($query);
     $stmt->bindValue(':pagina', $pg);
     $stmt->bindValue(':conteudo', $con);

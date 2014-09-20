@@ -31,7 +31,7 @@ switch($submit){
         $id = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_NUMBER_INT);
 
         if(update($pg, $textarea, $id) == true){
-            header('Location:'.$pg.'.php');
+            header('Location:'.$pg);
         }else{
             echo "erro ao alterar conteudo";
         }
