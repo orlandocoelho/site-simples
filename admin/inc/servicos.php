@@ -11,7 +11,9 @@
             </textarea>
         </div>
         <div class="form-group">
-            <button type="submit" class="btn btn-success" name="submit" value="submit">Enviar</button>
+            <input type="hidden" name="id" value="<?=$find['id']?>" />
+            <input type="hidden" name="pg" value="servicos" />
+            <button type="submit" class="btn btn-success" name="submit" value="update">Enviar</button>
         </div>
     </form>
 </div><!--./jumboton-->
