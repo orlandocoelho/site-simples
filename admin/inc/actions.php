@@ -24,5 +24,19 @@ switch($submit){
         }
 
         break;
+    case 'update':
+
+        $textarea = filter_input(INPUT_POST, 'textarea', FILTER_DEFAULT);
+        $pg = filter_input(INPUT_POST, 'pg', FILTER_SANITIZE_STRING);
+        $id = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_NUMBER_INT);
+
+        if(update($pg, $textarea, $id) == true){
+            header('Location:'.$pg.'.php');
+        }else{
+            echo "erro ao alterar conteudo";
+        }
+
+
+        break;
     default;
 }

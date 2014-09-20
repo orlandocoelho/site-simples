@@ -81,3 +81,18 @@ function find($pg){
     $stmt->execute();
     return $stmt->fetch(\PDO::FETCH_ASSOC);
 }
+
+function update($pg, $con, $id)
+{
+    $db = conexao();
+    $query = "UPDATE conteudo SET (pagina, conteudo) VALUES (':pagina', ':conteudo') WHERE id = ':id'";
+    $stmt = $db->prepare($query);
+    $stmt->bindValue(':pagina', $pg);
+    $stmt->bindValue(':conteudo', $con);
+    $stmt->bindValue(':id', $id);
+    if($stmt->execute()){
+        return true;
+    }else{
+        return false;
+    }
+}
