@@ -12,23 +12,26 @@ require_once ("Db/conexao.php");
 $route = ['home', 'empresa', 'produtos', 'servicos', 'contato', 'actions', 'login'];
 
 //pegando url parcial
-function getUrl()
+function getUrl($ar = null)
 {
     $getUrl = \parse_url($_SERVER['REQUEST_URI'], \PHP_URL_PATH);
     $url = explode("/", $getUrl);
-    return $url[1];
+    if($ar == null)
+        return $url;
+    else
+        return $url[$ar];
 }
 
 //verificando se existe na array a url digitada
 function inArray()
 {
-    return in_array(getUrl(), $GLOBALS['route']);
+    return in_array(getUrl(2), $GLOBALS['route']);
 }
 
 //verificando existencia do arquivo
 function exists()
 {
-    return file_exists('inc/'.getUrl().'.php');
+    return file_exists('inc/'.getUrl(2).'.php');
 }
 
 //Verifica se esta tudo certo e da require
@@ -38,7 +41,7 @@ function checks()
         if(getUrl() == null){
             require_once('inc/home.php');
         }else if(inArray() == true && exists() == true){
-            require_once("inc/".getUrl().'.php');
+            require_once("inc/".getUrl(2).'.php');
         }else{
             require_once("inc/error.php");
         }
@@ -50,7 +53,7 @@ function checks()
 
 function user()
 {
-    if(isset($_SESSION['user']) OR getUrl() == "actions"){
+    if(isset($_SESSION['user']) OR getUrl(2) == "actions"){
         return true;
     }{
         return false;

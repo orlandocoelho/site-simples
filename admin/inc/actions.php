@@ -15,9 +15,11 @@ switch($submit){
         ];
 
         if(logar($array) == true){
+            echo "ok";
             $_SESSION['user'] = 1;
             header('Location: home');
         }else{
+            echo "nops";
             $_SESSION['user'] = 0;
             header('Location: login.php');
             echo "Login e/ou Senha invalida!";
